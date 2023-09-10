@@ -7,8 +7,8 @@ from django.db import models
 class Activity(models.Model):
     check = models.BooleanField(default=False)
     subject = models.CharField(max_length = 20)
-    start_date = models.TextField();
-    end_date = models.TextField(null=True, blank=True)
+    start_date = models.DateField();
+    end_date = models.DateField(null=True, blank=True)
     award = models.CharField(max_length = 5)
     content = models.CharField(max_length = 20)
 

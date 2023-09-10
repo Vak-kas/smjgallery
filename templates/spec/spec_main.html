@@ -3,7 +3,13 @@
 {% block content %}
 
 {% if spec_list %}
-<p>스펙이 있습니다.</p>
+<ul>
+{% for spec in spec_list %}
+    <li>{{ spec.check }} | {{ spec.subject }} | {{ spec.start_date }} ~ {{ spec.end_date }} | {{ spec.award }} | {{ spec.content }}</li>
+
+
+{% endfor %}
+</ul>
 {% else %}
 <p>스펙이 없습니다.</p>
 {% endif %}
