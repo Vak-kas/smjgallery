@@ -2,12 +2,13 @@
 
 {% block content %}
 
-{% if activity %}
-{% for act in activity %}
-{% endfor %}
+{% if spec_list %}
+<p>스펙이 있습니다.</p>
 {% else %}
 <p>스펙이 없습니다.</p>
 {% endif %}
 
+
+<a href="{% url 'spec:create_spec' %}">스펙 추가하기...</a>
 
 {% endblock %}

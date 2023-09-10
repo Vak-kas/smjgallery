@@ -4,7 +4,7 @@ from spec.models import Activity
 class ActivityForm(forms.ModelForm):
     class Meta:
         model =  Activity;
-        field = ['check', 'subject', 'start_date', 'end_date', 'award', 'content']
+        fields = ['check', 'subject', 'start_date', 'end_date', 'award', 'content']
         labels = {
             'check' : "메인화면 출력 여부",
             'subject' : '활동명',
