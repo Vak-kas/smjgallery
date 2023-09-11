@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect
 # from django.http import HttpResponse;
 from .models import Activity;
 from .forms import ActivityForm
+from .serializers import ActivitySerializer
+
+from rest_framework import generics
+
 
 # Create your views here.
 
@@ -22,5 +26,16 @@ def create_spec(request):
         form = ActivityForm();
     context = {'form' : form};
     return render(request, 'spec/spec_create.html', context);
+
+
+
+class ActivityListCreateAPIViews(generics.ListCreateAPIView):
+    queryset = Activity.objects.all();
+    serializer_class = ActivitySerializer;
+
+
+
+
+
 
 
